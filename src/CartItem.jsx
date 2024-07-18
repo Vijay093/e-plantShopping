@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CreatSlice';
 import './CartItem.css';
+import ProductList from './ProductList';
 
 const Cart = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
@@ -22,7 +23,7 @@ const handleCheckoutShopping = (e) => {
 };
 
 const handleContinueShopping = (e) => {
-    
+    onContinueShopping();
 };
 
 
