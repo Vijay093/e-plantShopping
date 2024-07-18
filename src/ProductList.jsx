@@ -284,7 +284,7 @@ function ProductList() {
                     <div className="product-title">{plant.name}</div>
                     <div>{plant.description}</div>
                     <div>{plant.cost}</div>
-                    <button  onClick={() => handleAddToCart(plant)}>{addedToCart[plant.name] ? 'Added to Cart':'Add to Cart'}</button>
+                    <button className={cart.find(item => item.name === plant.name) ? 'product-button added-to-cart': 'product-button'} disabled={cart.find(item => item.name === plant.name)}  onClick={() => handleAddToCart(plant)}>{cart.find(item => item.name === plant.name) ? 'Added to Cart':'Add to Cart'}</button>
                     </div>
                 ))}
                 </div>
